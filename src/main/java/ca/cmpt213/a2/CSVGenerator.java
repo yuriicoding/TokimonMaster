@@ -61,7 +61,13 @@ public class CSVGenerator {
 
                             String score_val = String.valueOf(member.getCompatibility().getScore());
 
-                            writer.append("\n," + from_id + "," + to_id + "," + score_val + "," + comment + ",");
+                            if (from_id.equals(to_id)){
+                                writer.append("\n," + from_id + ", - ," + score_val + "," + comment + ",");
+                            }
+                            else{
+                                writer.append("\n," + from_id + "," + to_id + "," + score_val + "," + comment + ",");
+                            }
+                            
                         }
 
                         String extra = team.getExtra_comments();
